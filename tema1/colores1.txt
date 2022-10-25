@@ -1,0 +1,30 @@
+EL COLOR 
+
+RGB: red green blue
+
+
+^
+|
+|
+
+Luz en pantalla 
+
+Luz natural
+-----------
+Rojo, naranja, amarillo, verde, azul, añil y violeta.
+
+Los colores secundarios se obtienen al juntar diferentes colores primarios
+
+
+
+--------------------------------------------------------------------------
+
+CMYK: Cyan, magenta, yellow, black
+
+tinta, no confundir con luz
+
+
+
+
+
+

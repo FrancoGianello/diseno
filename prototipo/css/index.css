@@ -1,0 +1,28 @@
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navegador{
+    height: 120px;
+    width: 100%;
+    background-color: black;
+}
+.pater{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 0;
+    /* display: grid;
+    grid-template-columns: repeat(10, 1fr); */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.pater>div{
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}

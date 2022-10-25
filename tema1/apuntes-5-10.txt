@@ -1,0 +1,35 @@
+ELEMENTOS PARA EL DISEÑO WEB
+
+Interfaz web: 
+	-zona de navegación:
+		-¿dónde estoy?
+		-índice global
+	-zona de contenido o interacción:
+		-texto, imágenes, video
+
+Maquetación web:
+	-elementos
+	-páginas
+	-disposición de los elementos
+
+-----------------------------------------------------------------------------------------------------
+
+Elementos conceptuales 
+	-punto
+	-linea
+	-plano
+	-volumen
+Elementos visuales 
+	-visuales
+	-medida/tamaño
+	-color
+	-textura
+Elementos de relación
+	-dirección
+	-posición
+	-espacio
+	-gravedad
+Elementos prácticos
+	-representación
+	-significado
+	-función

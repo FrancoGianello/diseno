@@ -1,0 +1,92 @@
+GESTORES DE CONTENIDO
+
+CMS = Content management system. 
+
+Ejemplos: Wordpress, Joomla, Wix, Drupal, Magento, SquareSpace, etc... 
+
+Otros ejemplos pertenecientes a E-commerce: Magento, PrestaShop
+
+Lenguajes: 
+-frontend: php/html
+-bases de datos: mysql
+-plantillas: 
+
+
+Wordpress:
+Es el cms por antonomasia ya que es gratis, accesible, de interfaz intuitiva, tiene una comunidad amplia y recibe frecuentes actualizaciones.
+A pesar de ello tiene incovenientes de rendimiento a la hora de utilizar sitios que tengan mucho tráfico. 
+
+Joomla:
+Está orientado tanto a programadores y desarrolladores web como a principiantes y personas con ninguna relación con el mundo de la programación. Posee diseño de software orientado a objetos. Utilizaremos plantillas prediseñadas o crearemos nuevas.
+
+Drupal:
+Comunidad en torno a el que sirve de soporte. Bastante sencillo de utilizar. Arquitectura modular que permite un alto grado de personalización.
+
+Typo3 y Craft:
+Requiere ciertas nociones de programación. Se pueden utilizar plantillas desde 0.
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+POSICIONAMIENTO EN MOTORES DE BÚSQUEDA
+
+SEO: Search Engine Optimization
+No se paga por este, el posicionamiento lo hace el diseñador web mediante sendas estrategias. No se puede comprar.
+SEN: Search Engine Marketing
+Se paga para salir antes.
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+HOJAS DE ESTILO EN CASCADA
+
+CSS - Cascading Style Sheets. 
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+PLANTEAMIENTO DEL DISEÑO DE UN SITIO WEB
+
+Usabilidad --> fácil de usar, útil, intuitivo, agradable, bonito.
+
+Accesibilidad --> adaptadas a personas con discapacidades, ya sean visuales o sonoras. 
+
+Jerarquía vsual --> que la página este distribuida dando mayor importancia a los elementos más a la izquierda y más arriba.
+
+
+
+
+Áreas: 
+
+1- Redacción
+2- Producción
+	-cliente
+	-usuario
+	-presupuesto
+	-plan de trabajo
+3- Técnica: programación--> HTML, CSS, BBDD
+4- Artística
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Fases del desarrollo de in sitio web
+
+1- Sketch: arquitectura de la información
+2- Wireframe: arquitectura de la información
+3- Mockup: diseño visual
+4- Prototipo: funcional
+
+
+
+
+
+
+
+
+
+
+
+
+
