@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding-top: 0;
+}
+@media all{
+    p{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+body{
+    width: 100vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+@media screen{
+    p{
+        align-self: baseline;
+        padding: 10px;
+    }
+    img{
+        width: 300px;
+        height: 400px;
+    }
+}

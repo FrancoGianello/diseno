@@ -1,4 +1,6 @@
-
+:root{
+    --Water:
+}
 *, *::before, *::after{
     margin: 0;
     padding: 0;
@@ -25,4 +27,21 @@
     height: 150px;
     width: 150px;
     border-radius: 50%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
+.Water{background-color: rgb(121, 121, 244);}
+.Grass{background-color: green;}
+.Fire{background-color: orangered;}
+.Bug{background-color: greenyellow;}
+.Normal{background-color: gray;}
+.Electric{background-color: yellow;}
+.Ground{background-color: rgb(225, 180, 64);}
+.Poison{background-color: purple;}
+.Fighting{background-color: beige;}
+.Psychic{background-color: pink;}
+.Ice{background-color:aquamarine;}
+.Rock{background-color: brown;}
+.Dragon{background-color: rgb(0, 0, 170);}
