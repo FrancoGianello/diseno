@@ -1642,8 +1642,7 @@
       "french": "Magnéti"
     },
     "type": [
-      "Electric",
-      "Steel"
+      "Electric"
     ],
     "base": {
       "HP": 25,
@@ -1663,8 +1662,7 @@
       "french": "Magnéton"
     },
     "type": [
-      "Electric",
-      "Steel"
+      "Electric"
     ],
     "base": {
       "HP": 50,
