@@ -26,9 +26,11 @@ function pintar(){
                 casilla.innerHTML =" ";
             }else if(i==0 && j>0){
                 casilla.innerHTML = datos[j];
+                casilla.className = datos[j];
             }
             else if(j==0 && i>0){
                 casilla.innerHTML = datos[i];
+                casilla.className = datos[i];
             }
             else
             casilla.innerHTML =" ";

@@ -12,11 +12,14 @@
 </head>
 <body>
     <header class="navegador">
-        <a href="" class="links">INICIO</a>
-        <a href="" class="links">TABLA DE TIPOS</a>
-        <a href="" class="links">SOBRE MÍ</a>
+        <a href="./index.html" class="links">INICIO</a>
+        <a href="./tablaTipos.html" class="links">TABLA DE TIPOS</a>
+        <a href="./aboutMe.html" class="links">SOBRE MÍ</a>
     </header>
     <main id="main" class="main">
+        <section class="logo">
+            <img class="imagen__logo" src="./images/logo.png" alt="">
+        </section>
         <section class="main__heading">
             <h1>
                 POKEDEX: PRIMERA GENERACIÓN.
@@ -27,7 +30,14 @@
         </section>
     </main>
     <footer class="piePagina">
-        
+        <div class="piePagina__contenedor">
+            <button class="piePagina__subir" onclick="subirArriba()">Volver arriba</button>
+            <div class="piePagina__icons">
+                <img class="piePagina__icons__icon" src="./images/instagram.jpg" alt="">
+                <img class="piePagina__icons__icon" src="./images/twitter.png" alt="">
+                <img class="piePagina__icons__icon" src="./images/github.png" alt="">
+            </div>
+        </div>
     </footer>
 </body>
 </html>

@@ -1,3 +1,4 @@
+@import url("./plantilla.css");
 /* :root{
     --Water:rgb(121, 121, 244);
     --Grass: rgb(9, 146, 9);
@@ -14,35 +15,8 @@
     --Dragon: rgb(0, 0, 170);
     --Flying: rgb(149, 149, 230);
 } */
-*, *::before, *::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-}
 a{
     color: black;
-}
-html{
-    font-size: 62.5%;
-}
-body{
-    font-size: 1.6rem;
-    background-color: beige;
-}
-.navegador, .piePagina{
-    height: 120px;
-    width: 100%;
-    background-color: black;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.links{
-    padding: 20px;
-    color: white;
-    font-size: 2rem;
 }
 .main{
     max-width: 1200px;
@@ -55,7 +29,6 @@ body{
     justify-content: center;
     gap: 20px;
 }
-
 .main__heading{
     width: 100%;
     display: flex;
@@ -89,18 +62,36 @@ body{
     object-fit: cover;
     object-position: center;
 }
-.Water{background-color: rgb(78, 147, 244);}
-.Grass{background-color: rgb(9, 146, 9);}
-.Fire{background-color: rgb(244, 66, 2);}
-.Bug{background-color: rgb(168, 242, 57);}
-.Normal{background-color: rgb(129, 127, 127);}
-.Electric{background-color: rgb(226, 226, 1);}
-.Ground{background-color: rgb(225, 180, 64);}
-.Poison{background-color: rgb(128, 5, 128);}
-.Fighting{background-color: rgb(231, 231, 205);}
-.Psychic{background-color: rgb(241, 180, 191);}
-.Rock{background-color: rgb(165, 42, 42);}
-.Dragon{background-color: rgb(130, 57, 208);}
-.Flying{background-color: rgb(149, 149, 230);}
-.Ice{background-color:rgb(114, 233, 193);}
-.Ghost{background-color: plum;}
+
+.piePagina__contenedor{
+    margin: auto;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.piePagina__subir{
+    height: 5rem;
+    padding: 0.5rem;
+    font-size: 2.5rem;
+    border: none;
+    box-shadow: -4px 4px 12px -6px rgba(0,0,0,0.75);
+    
+}
+.Water{background-color: #6390F0;}
+.Grass{background-color: #7AC74C;}
+.Fire{background-color: #EE8130;}
+.Bug{background-color: #A6B91A;}
+.Normal{background-color: #A8A77A;}
+.Electric{background-color: #F7D02C;}
+.Ground{background-color: #E2BF65;}
+.Poison{background-color: #A33EA1;}
+.Fighting{background-color: #C22E28;}
+.Psychic{background-color: #F95587;}
+.Rock{background-color: #B6A136;}
+.Dragon{background-color: #6F35FC;}
+.Flying{background-color: #A98FF3;}
+.Ice{background-color:#96D9D6;}
+.Ghost{background-color: #735797;}

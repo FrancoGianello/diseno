@@ -1,21 +1,35 @@
-*, *::before, *::after{
-    margin: 0;
-    padding: 0;
-}
+@import url("./plantilla.css");
 .main{
     width: 90vw;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 25px;
 }
 .tabla{
     border-collapse: collapse;
-    border: 1px solid black;
     width: 100%;
 }
 td{
     text-align: center;
     width: calc(100% / 15);
     height: 30px;
+    font-size: 2rem;
+    padding: 0.5rem;
 }
+th{
+    font-size: 3rem;
+}
+.Water{background-color: #6390F0;}
+.Grass{background-color: #7AC74C;}
+.Fire{background-color: #EE8130;}
+.Bug{background-color: #A6B91A;}
+.Normal{background-color: #A8A77A;}
+.Electric{background-color: #F7D02C;}
+.Ground{background-color: #E2BF65;}
+.Poison{background-color: #A33EA1;}
+.Fighting{background-color: #C22E28;}
+.Psychic{background-color: #F95587;}
+.Rock{background-color: #B6A136;}
+.Dragon{background-color: #6F35FC;}
+.Flying{background-color: #A98FF3;}
+.Ice{background-color:#96D9D6;}
+.Ghost{background-color: #735797;}

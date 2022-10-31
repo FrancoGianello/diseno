@@ -8,7 +8,8 @@ http.onload = function(){
     if(this.readyState == 4 && this.status==200){
         let datos = JSON.parse(this.responseText);
         for (let value of datos) {
-            link.href="#";
+            link.href="pokemonInfo.html";
+            
             let hijo = document.createElement("div");
             let claseTipo ="unico "+value.type[0] +" caja";
             let textoTipo = value.type[0];
@@ -28,3 +29,6 @@ http.onload = function(){
         }
     }
 }
+function subirArriba() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
