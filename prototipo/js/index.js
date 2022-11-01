@@ -21,7 +21,7 @@ http.onload = function(){
             let imgRef = value.id;
             if(imgRef<100) imgRef= "0"+imgRef;
             if(imgRef<10)imgRef= "0"+imgRef;
-            hijo.innerHTML = '<p class="numero">'+value.id+'</p><img class="fotos" src="./images/'+ imgRef+'.png"/><p class="nombre">'+value.name.english+'</p><p class="tipo">'+textoTipo+'</p>';
+            hijo.innerHTML = '<p class="numero">'+imgRef+'</p><img class="fotos" src="./images/'+ imgRef+'.png"/><p class="nombre">'+value.name.english+'</p><p class="tipo">'+textoTipo+'</p>';
             padre.appendChild(link);
             link.appendChild(hijo);
             link = document.createElement("a");

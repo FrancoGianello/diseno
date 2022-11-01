@@ -35,6 +35,10 @@ a{
     justify-content: space-between;
     padding: 0 25px ;
 }
+h1{
+    font-family: serif;
+    font-size: 3rem;
+}
 .barra-busqueda{
     padding: .5rem;
     font-size: 2rem;
@@ -56,7 +60,6 @@ a{
     justify-content: center;
     align-items: center;
 }
-
 .fotos{
     width: 35%;
     object-fit: cover;
@@ -81,17 +84,17 @@ a{
     
 }
 .Water{background-color: #6390F0;}
+.Poison{background-color: #A33EA1;}
+.Normal{background-color: #A8A77A;}
+.Flying{background-color: #A98FF3;}
 .Grass{background-color: #7AC74C;}
 .Fire{background-color: #EE8130;}
 .Bug{background-color: #A6B91A;}
-.Normal{background-color: #A8A77A;}
 .Electric{background-color: #F7D02C;}
 .Ground{background-color: #E2BF65;}
-.Poison{background-color: #A33EA1;}
 .Fighting{background-color: #C22E28;}
 .Psychic{background-color: #F95587;}
 .Rock{background-color: #B6A136;}
 .Dragon{background-color: #6F35FC;}
-.Flying{background-color: #A98FF3;}
 .Ice{background-color:#96D9D6;}
 .Ghost{background-color: #735797;}

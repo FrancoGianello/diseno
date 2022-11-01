@@ -11,12 +11,15 @@
     margin: auto;
     background-color: #FFFFFF;
     padding: 2rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
+}
+h1{
+    text-align: center;
 }
 .titulo{
-    height: 25%;
+    height: 30%;
     margin-bottom: 1%;
 }
 .contenidos{
-    height: 70%;
+    height: 60%;
 }
