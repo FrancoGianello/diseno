@@ -83,6 +83,9 @@ h1{
     box-shadow: -4px 4px 12px -6px rgba(0,0,0,0.75);
     
 }
+.caja>p{
+    padding: 0.1rem;
+}
 .Water{background-color: #6390F0;}
 .Poison{background-color: #A33EA1;}
 .Normal{background-color: #A8A77A;}
