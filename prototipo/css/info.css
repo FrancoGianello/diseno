@@ -3,7 +3,7 @@
     width: 70vw;
     margin: auto;
     padding: 25px;
-    height: 70vh;
+    height: 80vh;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr 2fr;

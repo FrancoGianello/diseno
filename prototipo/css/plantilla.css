@@ -20,7 +20,7 @@ body{
     background-color: #DFDFDF;
 }
 .navegador, .piePagina{
-    height: 15vh;
+    height: 10vh;
     width: 100%;
     background-color: #FB1B1B;
 }
@@ -30,7 +30,7 @@ body{
     align-items: center;
 }
 .piePagina__icons__icon{
-    width: 50px;
+    width: 30px;
     object-fit: cover;
     object-position: center;
 }

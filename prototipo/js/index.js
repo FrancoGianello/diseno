@@ -13,14 +13,14 @@ http.onload = function(){
             let color1 = devolverColor(value.type[0]);
             let estiloContenedor = 'style="background: '+ color1 +';"'
             if(value.type.length==2){
-            textoTipo = value.type[0]+ " "+value.type[1];
-            let color2 = devolverColor(value.type[1]);
-            estiloContenedor = 'style="background: linear-gradient(90deg, '+ color1+' 40%, '+ color2+' 60%);"'
+                textoTipo = value.type[0]+ " "+value.type[1];
+                let color2 = devolverColor(value.type[1]);
+                estiloContenedor = 'style="background: linear-gradient(25deg, '+ color1+' 50%, '+ color2+' 50%);"'
             }
             let imgRef = value.id;
             if(imgRef<100) imgRef= "0"+imgRef;
             if(imgRef<10)imgRef= "0"+imgRef;
-            link.innerHTML = '<div '+ estiloContenedor+' class="caja"><p class="numero">'+imgRef+'</p><img class="fotos" src="./images/'+ imgRef+'.png"/><p class="nombre">'+value.name.english+'</p><p class="tipo">'+textoTipo+'</p></div>';
+            link.innerHTML = '<div '+ estiloContenedor+' class="caja"><p class="numero">'+imgRef+'</p><img class="fotos" src="./images/'+ imgRef+'.png"/><p class="nombre"><b>'+value.name.english+'</b></p><p class="tipo">'+textoTipo+'</p></div>';
             padre.appendChild(link);
             link = document.createElement("a");
             link.className = "enlace";
@@ -30,6 +30,24 @@ http.onload = function(){
 function subirArriba() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 };
+function buscarDatos() {
+    var input, filtro, dato;
+    input = document.getElementById("barra-busqueda");
+    filtro = input.value.toUpperCase();
+    dato = padre.getElementsByTagName("a");
+    for (i = 0; i < dato.length; i++) {
+        let contenedor = dato[i].getElementsByTagName("div")[0];
+        let numeroID = contenedor.getElementsByTagName("p")[0].innerText;
+        let nombreBuscar = contenedor.getElementsByTagName("p")[1].innerText;
+        let tipoBuscar = contenedor.getElementsByTagName("p")[2].innerText;
+        if (tipoBuscar.toUpperCase().indexOf(filtro) > -1 || nombreBuscar.toUpperCase().indexOf(filtro) > -1  || numeroID.toUpperCase().indexOf(filtro) > -1 ) {
+            dato[i].style.display = "";
+        } else {
+            dato[i].style.display = "none";
+        }
+    }
+}
+
 function devolverColor(valor){
     let color = "";
     switch (valor) {
