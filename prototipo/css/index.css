@@ -86,18 +86,3 @@ h1{
 .caja>p{
     padding: 0.1rem;
 }
-.Water{background-color: #6390F0;}
-.Poison{background-color: #A33EA1;}
-.Normal{background-color: #A8A77A;}
-.Flying{background-color: #A98FF3;}
-.Grass{background-color: #7AC74C;}
-.Fire{background-color: #EE8130;}
-.Bug{background-color: #A6B91A;}
-.Electric{background-color: #F7D02C;}
-.Ground{background-color: #E2BF65;}
-.Fighting{background-color: #C22E28;}
-.Psychic{background-color: #F95587;}
-.Rock{background-color: #B6A136;}
-.Dragon{background-color: #6F35FC;}
-.Ice{background-color:#96D9D6;}
-.Ghost{background-color: #735797;}

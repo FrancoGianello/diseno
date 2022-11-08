@@ -47,7 +47,6 @@ function buscarDatos() {
         }
     }
 }
-
 function devolverColor(valor){
     let color = "";
     switch (valor) {
@@ -71,3 +70,4 @@ function devolverColor(valor){
     }
     return color;
 }
+Boolean("hola");

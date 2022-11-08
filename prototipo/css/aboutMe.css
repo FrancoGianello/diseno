@@ -4,6 +4,9 @@
     margin: auto;
     padding: 25px;
     height: 80vh;
+    display: grid;
+    grid-template-rows: 1fr 1.5fr;
+    gap: 10px;
 }
 .titulo, .contenidos{
     width: 100%;
@@ -13,13 +16,12 @@
     padding: 2rem;
     font-size: 2.5rem;
 }
-h1{
-    text-align: center;
+.main>article{
+    height: 100%;
 }
-.titulo{
-    height: 30%;
-    margin-bottom: 1%;
-}
-.contenidos{
-    height: 60%;
+.fotoMia{
+    object-fit: cover;
+    object-position: center;
+    width: 20%;
+    float: left;
 }
