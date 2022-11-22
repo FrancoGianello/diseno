@@ -1,20 +1,5 @@
 @import url("./plantilla.css");
-/* :root{
-    --Water:rgb(121, 121, 244);
-    --Grass: rgb(9, 146, 9);
-    --Fire: rgb(244, 66, 2);
-    --Bug: rgb(168, 242, 57);
-    --Normal: rgb(129, 127, 127);
-    --Electric: rgb(226, 226, 1);
-    --Ground: rgb(225, 180, 64);
-    --Poison: rgb(128, 5, 128);
-    --Fighting: rgb(231, 231, 205);
-    --Psychic: rgb(241, 180, 191);
-    --Ice:rgb(114, 233, 193);
-    --Rock: rgb(165, 42, 42);
-    --Dragon: rgb(0, 0, 170);
-    --Flying: rgb(149, 149, 230);
-} */
+
 a{
     color: black;
 }

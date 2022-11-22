@@ -1,35 +1,31 @@
 let http = new XMLHttpRequest();
-let padre = document.getElementById("main");
-let link = document.createElement("a");
-link.className = "enlace";
+let padre="";
+try {
+    padre = document.getElementById("mainIndex");   
+}catch (error) {}  
 http.open('get', 'pokedexData.json', true);
 http.send();
-http.onload = function(){
-    if(this.readyState == 4 && this.status==200){
-        let datos = JSON.parse(this.responseText);
-        for (let value of datos) {
-            link.href="pokemonInfo.html";
-            let textoTipo = value.type[0];
-            let color1 = devolverColor(value.type[0]);
-            let estiloContenedor = 'style="background: '+ color1 +';"'
-            if(value.type.length==2){
-                textoTipo = value.type[0]+ " "+value.type[1];
-                let color2 = devolverColor(value.type[1]);
-                estiloContenedor = 'style="background: linear-gradient(25deg, '+ color1+' 50%, '+ color2+' 50%);"'
+if (padre!=undefined && padre!=null){
+    http.onload = function(){
+        if(this.readyState == 4 && this.status==200){
+            let datos = JSON.parse(this.responseText);
+            for (let value of datos) {
+                let textoTipo = value.type[0];
+                let color1 = devolverColor(value.type[0]);
+                let estiloContenedor = 'style="background: '+ color1 +';"'
+                if(value.type.length==2){
+                    textoTipo = value.type[0]+ " "+value.type[1];
+                    let color2 = devolverColor(value.type[1]);
+                    estiloContenedor = 'style="background: linear-gradient(25deg, '+ color1+' 50%, '+ color2+' 50%);"'
+                }
+                let imgRef = value.id;
+                if(imgRef<100) imgRef= "0"+imgRef;
+                if(imgRef<10)imgRef= "0"+imgRef;
+                padre.innerHTML += '<a class="enlace" id="'+value.id+'" href="pokemonInfo.html" onclick="volcarDatos('+value.id+')"><div '+ estiloContenedor+' class="caja"><p class="numero">'+imgRef+'</p><img class="fotos" src="./images/'+ imgRef+'.png"/><p class="nombre"><b>'+value.name.english+'</b></p><p class="tipo">'+textoTipo+'</p></div></a>';
             }
-            let imgRef = value.id;
-            if(imgRef<100) imgRef= "0"+imgRef;
-            if(imgRef<10)imgRef= "0"+imgRef;
-            link.innerHTML = '<div '+ estiloContenedor+' class="caja"><p class="numero">'+imgRef+'</p><img class="fotos" src="./images/'+ imgRef+'.png"/><p class="nombre"><b>'+value.name.english+'</b></p><p class="tipo">'+textoTipo+'</p></div>';
-            padre.appendChild(link);
-            link = document.createElement("a");
-            link.className = "enlace";
         }
     }
 }
-function subirArriba() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-};
 function buscarDatos() {
     var input, filtro, dato;
     input = document.getElementById("barra-busqueda");
@@ -70,4 +66,18 @@ function devolverColor(valor){
     }
     return color;
 }
-Boolean("hola");
+function subirArriba() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
+function volcarDatos(identifcador){
+    let datos = JSON.parse(this.responseText);
+    for(let value of datos){
+        if(value.id == identifcador){
+            try {
+                document.getElementById("descripcionPokedex").innerHTML="hola";
+            } catch (error) {
+                
+            }
+        }
+    }
+}

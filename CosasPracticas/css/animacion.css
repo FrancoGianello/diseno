@@ -6,7 +6,8 @@
     width: 100vw;
     height: 99vh;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 .hijo{
     border: 1px solid black;
@@ -14,27 +15,48 @@
 .haceFlex{
     display: flex;
     justify-content: space-evenly;
-    align-items: baseline;
+    align-items: center;
     gap: 10px;
 }
 .cosa{
     width: 10%;
     height: 10%;
-    border: 1px solid black;
-    animation: animacion2 4s linear infinite;
-}
-.rotacion{
+    animation: animacion2 2s linear infinite;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+}
+.cosa>p{
+    font-size: 40px;
+    animation: animacion2Color 2s linear infinite;
+    animation-delay: 1s;
+}
+.larga{
+    animation-delay: 1s;
+}
+.rotacion{
+    background-color: aqua;
+    animation: fondoSolar 4s ease-in-out infinite;
 }
 .bola{
     height: 100px;
     width: 100px;
-    background-color: grey;
-    animation: rotar 1s linear infinite;
+    border-radius: 50%;
+    background-color: yellow;
+    position: absolute;
+    top: 120px;
+    left: 50w;
+    animation: cicloSolar 4s linear infinite;
 }
-
+.suelo{
+    width: 100%;
+    height: 100px;
+    background-color: green;
+    position: relative;
+    top: calc(100% - 100px);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
 .alinear__centro{
     display: flex;
     justify-content: center;
@@ -43,7 +65,6 @@
 .transicionar{
     height: 100px;
     width: 100px;
-    border: 1px solid black;
     transition: all 2s ease-in-out;
     background-color: black;
     display: flex;
@@ -104,10 +125,48 @@
     100%{background-color: magenta;
     flex-grow: 1;}
 }
-@keyframes rotar {
-    0%{transform: rotate(90deg);}
-    25%{transform: rotate(180deg);}
-    50%{transform: rotate(360deg);}
-    75%{transform: rotate(180deg);}
-    100%{transform: rotate(90deg);}
+@keyframes animacion2Color {
+    0%{color: magenta;}
+    25%{color: yellow;}
+    50%{color: white;}
+    75%{color: white;}
+    100%{color: magenta;}
+}
+@keyframes cicloSolar {
+    0%{top: 120px;
+    left: 50vw;
+    background-color: yellow;}
+    10%{top: 80px;
+    left: calc(60vw - 100px);}
+    20%{top: 40px;
+    left: calc(70vw - 100px);}
+    25%{top: 20px;
+    background-color: white;}
+    30%{top:40px;
+    left: calc(80vw - 100px);}
+    40%{top: 80px;
+    left: calc(90vw - 100px);}
+    50%{top: 120px;
+    left:  calc(100vw - 100px);
+    background-color: yellow;}
+    60%{top: 80px;
+    left: calc(90vw - 100px);}
+    70%{top:40px;
+    left: calc(80vw - 100px);}
+    75%{top: 20px;
+    background-color: white;}
+    80%{top: 40px;
+    left: calc(70vw - 100px);}
+    90%{top: 80px;
+    left: calc(60vw - 100px);}
+    100%{top: 120px;
+    left:50vw;
+    background-color: yellow;}
+}
+@keyframes fondoSolar {
+    0%{background-color: aqua;}
+    40%{background-color: darkblue;}
+    50%{background-color: rgb(11, 11, 71);}
+    60%{background-color: darkblue;}
+    100%{background-color: aqua;}
 }

@@ -1,37 +1,57 @@
 @import url("./plantilla.css");
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
 .main{
     width: 90vw;
     margin: auto;
-    padding: 25px;
+    padding: 0 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 5px;
 }
 .tabla{
     border-collapse: collapse;
     width: 100%;
+    box-shadow: 5px 10px 8px #888888;;
 }
 td{
     text-align: center;
-    width: calc(100% / 15);
-    height: 30px;
     font-size: 2rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
 }
-th{
-    font-size: 3rem;
-    font-family: serif;
-    padding: 15px;
+.efectividad1{
+    background-color: white;
 }
-.Water{background-color: #6390F0;}
-.Grass{background-color: #7AC74C;}
-.Fire{background-color: #EE8130;}
-.Bug{background-color: #A6B91A;}
-.Normal{background-color: #A8A77A;}
-.Electric{background-color: #F7D02C;}
-.Ground{background-color: #E2BF65;}
-.Poison{background-color: #A33EA1;}
-.Fighting{background-color: #C22E28;}
-.Psychic{background-color: #F95587;}
-.Rock{background-color: #B6A136;}
-.Dragon{background-color: #6F35FC;}
-.Flying{background-color: #A98FF3;}
-.Ice{background-color:#96D9D6;}
-.Ghost{background-color: #735797;}
+.efectividad2{
+    background-color: rgb(5, 194, 5);
+}
+.efectividad0{
+    background-color: black;
+    color: white;
+}
+.efectividadMedio{
+    background-color: orange;
+}
+.tipo{
+    font-weight: bold;
+}
+.water{background-color: #6390F0;}
+.grass{background-color: #7AC74C;}
+.fire{background-color: #EE8130;}
+.bug{background-color: #A6B91A;}
+.normal{background-color: #A8A77A;}
+.electric{background-color: #F7D02C;}
+.ground{background-color: #E2BF65;}
+.poison{background-color: #A33EA1;}
+.fighting{background-color: #C22E28;}
+.psychic{background-color: #F95587;}
+.rock{background-color: #B6A136;}
+.dragon{background-color: #6F35FC;}
+.flying{background-color: #A98FF3;}
+.ice{background-color:#96D9D6;}
+.ghost{background-color: #735797;}

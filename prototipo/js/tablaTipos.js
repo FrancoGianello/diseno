@@ -1,44 +1,60 @@
-let datos = [
-    "Normal",
-    "Flying", 
-    "Electric",
-    "Water",
-    "Ice",
-    "Dragon",
-    "Fighting",
-    "Poison",
-    "Grass",
-    "Ghost",
-    "Fire",
-    "Bug",
-    "Ground",
-    "Rock",
-    "Psychic"
-]
-
-function pintar(){
-    let tabla = document.getElementById("tabla");
-    let fila = document.createElement("tr");
-    let casilla = document.createElement("td");  
-    for (let i = 0; i < 15; i++) {
-        for (let j = 0; j < 15; j++) {
-            if(i==0 && j==0){
-                casilla.innerHTML =" ";
-            }else if(i==0 && j>0){
-                casilla.innerHTML = datos[j];
-                casilla.className = datos[j];
+let http = new XMLHttpRequest();
+http.open('get', 'tablaTipos.json', true);
+http.send();
+let padre = document.getElementById("tbody");
+let primeraFila = true;
+let td = document.createElement("td");
+let tr = document.createElement("tr");
+http.onload = function(){
+    if(this.readyState == 4 && this.status==200){
+        let datos = JSON.parse(this.responseText);
+        //Sacar la cantidad de tipos que hay más uno (para la casilla de la izquierda con el tipo   )
+        let longitud = Object.keys(datos).length+1;
+        for (var keyX in datos) {
+            if (datos.hasOwnProperty(keyX)) {
+                //pintar primera fila con los nombres de los tipos
+                if(primeraFila){
+                    primeraFila=false;
+                    td = crearTd(longitud);
+                    td.innerHTML="";
+                    tr.appendChild(td)
+                    for (var keyY in datos) {
+                        if (datos.hasOwnProperty(keyY)) {
+                            td =  crearTd(longitud);
+                            td.className = "tipo "+keyY;
+                            td.innerHTML = keyY;
+                            tr.appendChild(td)
+                            tabla.appendChild(tr);
+                        }
+                    }
+                }
+                //resetear fila
+                tr = document.createElement("tr");
+                //generar primer td a la izquierda del todo
+                td = crearTd(longitud);
+                td.innerHTML=keyX;
+                td.className= "tipo "+keyX;
+                tr.appendChild(td);
+                //generar efectividades
+                for (var keyY in datos) {
+                    if (datos.hasOwnProperty(keyY)) {
+                        td = crearTd(longitud);
+                        tr.appendChild(td);
+                        td.className = "efectividad"+datos[keyX][keyY];
+                        if(datos[keyX][keyY]==0.5) td.className="efectividadMedio"
+                        td.innerHTML = "X"+datos[keyX][keyY];
+                    }
+                }
+                tabla.appendChild(tr);
             }
-            else if(j==0 && i>0){
-                casilla.innerHTML = datos[i];
-                casilla.className = datos[i];
-            }
-            else
-            casilla.innerHTML =" ";
-            fila.appendChild(casilla);      
-            casilla = document.createElement("td");     
         }
-        tabla.appendChild(fila);
-        fila = document.createElement("tr");
+        
+        
     }
 }
-pintar();
+
+function crearTd(longitud){
+    let td =document.createElement("td");
+    td.style.width = 'calc(100% / '+longitud+')' ;
+    return td;
+}
