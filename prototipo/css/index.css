@@ -44,6 +44,12 @@ h1{
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    transition: all 0.1s ease-in;
+}
+.caja:hover{
+    -webkit-box-shadow: 0 0 20px -6px #FB1B1B;
+    -moz-box-shadow: 0 0 20px -6px #FB1B1B;
+    box-shadow: 0 0 20px -6px #FB1B1B;
 }
 .fotos{
     width: 35%;

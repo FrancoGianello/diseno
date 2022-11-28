@@ -1,5 +1,6 @@
 let http = new XMLHttpRequest();
-http.open('get', 'tablaTipos.json', true);
+http.open('get', './json/tablaTipos.json', true);
+// http.open('get', 'type-chart.json', true);
 http.send();
 let padre = document.getElementById("tbody");
 let primeraFila = true;
@@ -42,7 +43,7 @@ http.onload = function(){
                         tr.appendChild(td);
                         td.className = "efectividad"+datos[keyX][keyY];
                         if(datos[keyX][keyY]==0.5) td.className="efectividadMedio"
-                        td.innerHTML = "X"+datos[keyX][keyY];
+                        td.innerHTML = "x"+datos[keyX][keyY];
                     }
                 }
                 tabla.appendChild(tr);

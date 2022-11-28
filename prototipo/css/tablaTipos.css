@@ -22,7 +22,7 @@ body{
 td{
     text-align: center;
     font-size: 2rem;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 10px;
 }
 .efectividad1{
     background-color: white;
@@ -55,3 +55,6 @@ td{
 .flying{background-color: #A98FF3;}
 .ice{background-color:#96D9D6;}
 .ghost{background-color: #735797;}
+.dark{background-color:#705746;}
+.steel{background-color: #B7B7CE;}
+.fairy{background-color: #D685AD;}

@@ -39,6 +39,10 @@ body{
     color: white;
     font-size: 3rem;
     font-family: serif;
+    transition: all 0.25s ease-in-out;
+}
+.links:hover{
+    color: gold;
 }
 .piePagina__iconsContenedor{
     max-width: 1200px;
