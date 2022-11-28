@@ -1,31 +1,26 @@
 <?php
     //Obtener datos de la pokedex
+    // spl_autoload_register(function ($class) {
+    //     $classPath = realpath("./");
+    //     $file = str_replace('\\', '/', $class);
+    //     $include = "$classPath/${file}.php";
+    //     require($include);
+    // });
+    require("Detalle.php");
+    
     $datos = file_get_contents("pokedexData.json");
     $datosPokemon = json_decode($datos);
     if(isset($_GET["id"])){
-        if($_GET["id"]==1){
-            echo "muero no se controlar esto todavia";
-            die();
-        }else $identificador = $_GET["id"]-1;
+        $identificador = $_GET["id"]-1;
         $coincidencia = false;
-        foreach ($datosPokemon as $key => $value) if($identificador==$datosPokemon[$key]->id) $coincidencia=true;
-        if(!$coincidencia) {
+        $detallePokemon = new Detalle($identificador);
+        if(empty($detallePokemon)) {
             echo "ERROR 404 data not found";
             die();
-        }
+        }else $detallePokemon->inicializarDatos();
     }else {
         echo "Esta página solo muestra la detalle";
         die();
-    }
-    function pintarInfo($identificador, $especificacion){
-        echo $especificacion." ";
-        print_r ($identificador->$especificacion);
-    }
-    function obtenerId($id){
-        if($id<100) $id= "0".$id;
-        if($id<10)$id= "0".$id;
-        $id=$id."";
-        echo($id);
     }
 ?>
 <!DOCTYPE html>
@@ -48,20 +43,17 @@
     </header>
     <main class="main" id="main">
         <div id="imagen" class="imagen">
-            <img src="./images/<?php obtenerId($datosPokemon[$identificador]->id)?>.png">
+            <img src="./images/<?php echo $detallePokemon->getImgRef(); ?>.png">
         </div>
         <div id="descripcionPokedex" class="descripcionPokedex">
             <?php  
-                obtenerId($datosPokemon[$identificador]->id);
-                echo "<br/>";   
-                pintarInfo($datosPokemon[$identificador], "name"); 
+
             ?>
         </div>
         <div id="descripcionJuego" class="descripcionJuego">
             <?php
-                 pintarInfo($datosPokemon[$identificador], "type");
-                 echo "</br>";
-                 pintarInfo($datosPokemon[$identificador], "base");
+                 
+
             ?>
         </div>
     </main>
