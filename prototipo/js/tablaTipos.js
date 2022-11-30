@@ -1,6 +1,6 @@
 let http = new XMLHttpRequest();
-http.open('get', './json/tablaTipos.json', true);
-// http.open('get', 'type-chart.json', true);
+// http.open('get', './json/tablaTipos.json', true);
+http.open('get', './json/type-chart.json', true);
 http.send();
 let padre = document.getElementById("tbody");
 let primeraFila = true;
@@ -53,9 +53,11 @@ http.onload = function(){
         
     }
 }
-
+let cont =0;
 function crearTd(longitud){
     let td =document.createElement("td");
     td.style.width = 'calc(100% / '+longitud+')' ;
+    td.id=cont;
+    cont++;
     return td;
 }

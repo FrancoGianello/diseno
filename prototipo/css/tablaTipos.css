@@ -14,15 +14,21 @@ body{
     flex-flow: column;
     gap: 5px;
 }
+.contenedorTabla{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    grid-template-rows: 25px 1fr;
+    box-shadow: 5px 10px 8px #888888;;
+}
 .tabla{
     border-collapse: collapse;
     width: 100%;
-    box-shadow: 5px 10px 8px #888888;;
 }
 td{
     text-align: center;
     font-size: 2rem;
-    padding: 0.5rem 10px;
+    padding: 0.5rem 0;
 }
 .efectividad1{
     background-color: white;
@@ -40,21 +46,24 @@ td{
 .tipo{
     font-weight: bold;
 }
-.water{background-color: #6390F0;}
-.grass{background-color: #7AC74C;}
-.fire{background-color: #EE8130;}
-.bug{background-color: #A6B91A;}
-.normal{background-color: #A8A77A;}
-.electric{background-color: #F7D02C;}
-.ground{background-color: #E2BF65;}
-.poison{background-color: #A33EA1;}
-.fighting{background-color: #C22E28;}
-.psychic{background-color: #F95587;}
-.rock{background-color: #B6A136;}
-.dragon{background-color: #6F35FC;}
-.flying{background-color: #A98FF3;}
-.ice{background-color:#96D9D6;}
-.ghost{background-color: #735797;}
-.dark{background-color:#705746;}
-.steel{background-color: #B7B7CE;}
-.fairy{background-color: #D685AD;}
+.transicion{
+    background: linear-gradient(45deg, rgb(255, 76, 76) 50%, rgb(95, 92, 249) 50%);
+}
+.defensor{
+    background-color: rgb(95, 92, 249);
+}
+.atacante, .defensor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.atacante{
+    background-color: rgb(255, 76, 76);
+}
+.atacante>p, .defensor>p{
+    font-weight: bold;
+    letter-spacing: 20px;
+}
+.atacante>p{
+    transform: rotate(-90deg);
+}

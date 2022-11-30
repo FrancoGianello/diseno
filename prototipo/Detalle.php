@@ -1,37 +1,40 @@
 <?php
-    class Pokemon{
+    class Detalle{
         private $id;
         private $imgRef;
         private $name;
         private $type;
         private $base;
-        private $file = file_get_contents("pokedexData.json");
-        const $datosPokemon = json_decode(self::$file);
+        
         public function __construct($id){
             $this->id=$this->validar($id);
         }
         public function validar($identificador){
+            $file = file_get_contents("./json/pokedexData.json");
+            $datosPokemon = json_decode($file);
             $coincidencia = false;
-            $i =0;
-            while($i<count($datosPokemon) && !$coincidencia) {
-                if($identificador==0)$coincidencia=true;
-                if($identificador==$datosPokemon[$i]->id) $coincidencia=true;
-                $i++;
+            if($identificador==0)$coincidencia=true;
+            foreach ($datosPokemon as $key => $value) {
+                if($identificador==$datosPokemon[$key]->id) $coincidencia=true;
             }
             $id="";
             if($coincidencia) $id=$identificador;
             return $id;
         }
         public function inicializarDatos(){
-            $this->name =$datosPokemon[$this->id]->name->english;
-            $this->type = $datosPokemon[$this->id]->type;
-            $this->base = $datosPokemon[$this->id]->base;
-            $this->imgRef = obtenerImgRef($this->id);
+            $file = file_get_contents("./json/pokedexData.json");
+            $datosPokemon = json_decode($file);
+            //restar uno porque el index en el json empieza en 0
+            $this->name =$datosPokemon[$this->id-1]->name->english;
+            $this->type = $datosPokemon[$this->id-1]->type;
+            $this->base = $datosPokemon[$this->id-1]->base;
+            $this->imgRef = $this->obtenerImgRef($this->id);
         }
         function obtenerImgRef($id){
             if($id<100) $id= "0".$id;
             if($id<10)$id= "0".$id;
-            $this->imgRef=$id."";
+            return $id."";
+            
         }
         public function pintarDatos(){
 

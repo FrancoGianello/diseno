@@ -1,20 +1,10 @@
 <?php
-    //Obtener datos de la pokedex
-    // spl_autoload_register(function ($class) {
-    //     $classPath = realpath("./");
-    //     $file = str_replace('\\', '/', $class);
-    //     $include = "$classPath/${file}.php";
-    //     require($include);
-    // });
-    require("Detalle.php");
-    
-    $datos = file_get_contents("pokedexData.json");
-    $datosPokemon = json_decode($datos);
+    require ("./Detalle.php");
     if(isset($_GET["id"])){
-        $identificador = $_GET["id"]-1;
+        $identificador = $_GET["id"];
         $coincidencia = false;
         $detallePokemon = new Detalle($identificador);
-        if(empty($detallePokemon)) {
+        if($detallePokemon->getId()=="") {
             echo "ERROR 404 data not found";
             die();
         }else $detallePokemon->inicializarDatos();
@@ -47,13 +37,20 @@
         </div>
         <div id="descripcionPokedex" class="descripcionPokedex">
             <?php  
-
+                
+                echo (count($detallePokemon->getType())==1)? "Tipo: " :  "Tipos: ";
+                array_walk($detallePokemon->getType(), function($key){
+                    echo $key." ";
+                });
+                echo "<br/>";
+                echo ($detallePokemon->getName());
             ?>
         </div>
         <div id="descripcionJuego" class="descripcionJuego">
             <?php
-                 
-
+                array_walk($detallePokemon->getBase(), function($key, $value){
+                    echo $key.": ".$value." ";
+                });
             ?>
         </div>
     </main>
