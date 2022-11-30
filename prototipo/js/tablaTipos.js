@@ -3,9 +3,8 @@ let http = new XMLHttpRequest();
 http.open('get', './json/type-chart.json', true);
 http.send();
 let padre = document.getElementById("tbody");
-let primeraFila = true;
-let td = document.createElement("td");
 let tr = document.createElement("tr");
+let primeraFila = true;
 http.onload = function(){
     if(this.readyState == 4 && this.status==200){
         let datos = JSON.parse(this.responseText);
@@ -16,48 +15,41 @@ http.onload = function(){
                 //pintar primera fila con los nombres de los tipos
                 if(primeraFila){
                     primeraFila=false;
-                    td = crearTd(longitud);
-                    td.innerHTML="";
-                    tr.appendChild(td)
+                    tr.innerHTML += '<td id="'+obtenerId(longitud)+'" ></td>';
                     for (var keyY in datos) {
                         if (datos.hasOwnProperty(keyY)) {
-                            td =  crearTd(longitud);
-                            td.className = "tipo "+keyY;
-                            td.innerHTML = keyY;
-                            tr.appendChild(td)
-                            tabla.appendChild(tr);
+                            tr.innerHTML += '<td id="'+obtenerId(longitud)+'" class="'+keyY+'">'+keyY+"</td>";
                         }
                     }
+                    padre.appendChild(tr);
                 }
                 //resetear fila
                 tr = document.createElement("tr");
-                //generar primer td a la izquierda del todo
-                td = crearTd(longitud);
-                td.innerHTML=keyX;
-                td.className= "tipo "+keyX;
-                tr.appendChild(td);
+                tr.innerHTML += '<td id="'+obtenerId(longitud)+'" class="'+ keyX+'">'+ keyX+'</td>';
                 //generar efectividades
                 for (var keyY in datos) {
                     if (datos.hasOwnProperty(keyY)) {
-                        td = crearTd(longitud);
-                        tr.appendChild(td);
-                        td.className = "efectividad"+datos[keyX][keyY];
-                        if(datos[keyX][keyY]==0.5) td.className="efectividadMedio"
-                        td.innerHTML = "x"+datos[keyX][keyY];
+                        efectividad="efectividad"+datos[keyX][keyY];
+                        if(datos[keyX][keyY]==0.5) efectividad="efectividadMedio"
+                        tr.innerHTML += '<td style="width: calc(100% / '+longitud+')" onhover="" class="'+efectividad+'" id="'+obtenerId(longitud)+'">x'+ datos[keyX][keyY]+'</td>';
                     }
                 }
-                tabla.appendChild(tr);
+                padre.appendChild(tr);
+                // tabla.appendChild(tr);
             }
         }
         
         
     }
 }
-let cont =0;
-function crearTd(longitud){
-    let td =document.createElement("td");
-    td.style.width = 'calc(100% / '+longitud+')' ;
-    td.id=cont;
-    cont++;
-    return td;
+let contX =0;
+let contY=0;
+function obtenerId(longitud){
+    if(contX==longitud){
+        contY++;
+        contX=0;
+    }
+    let id=contY +" "+contX;
+    contX++;
+    return id;
 }
