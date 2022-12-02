@@ -47,6 +47,7 @@
             ?>
         </div>
         <div id="descripcionJuego" class="descripcionJuego">
+            <h1 class="tituloStats">POKEMON STATS</h1>
             <?php
                 array_walk($detallePokemon->getBase(), function($key, $value){
                     echo $key.": ".$value." ";
