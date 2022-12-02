@@ -5,13 +5,17 @@ try {
 }catch (error) {}  
 http.open('get', './json/pokedexData.json', true);
 http.send();
+const FINALGEN1 =151;
 if (padre!=undefined && padre!=null){
     http.onload = function(){
         if(this.readyState == 4 && this.status==200){
             let datos = JSON.parse(this.responseText);
             for (let value of datos) {
-            pokemonDatos = new Pokemon(value.id, value.name.english, value.type);
-            padre.innerHTML += pokemonDatos.pintarObjeto();
+                if(value.id<=FINALGEN1){
+                pokemonDatos = new Pokemon(value.id, value.name.english, value.type);
+                padre.innerHTML += pokemonDatos.pintarObjeto();
+                }
+                else break;
             }
         }
     }

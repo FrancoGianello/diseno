@@ -59,39 +59,29 @@ function destacarTipos(ejeY, ejeX){
     //recorrer en la posicion X, tantas como Y se han especificado
     for (let i = 0; i < ejeY; i++) {
         casillaX = document.getElementById(i+" "+ejeX);
-        casillaX.style.position = "relative";
-        casillaX.style.boxShadow = "0 0 3px 5px #7AEEE3";   
+        casillaX.classList.add("destacado");  
     }
     //recorrer en la posicion Y, tantas como X se han especificado
     for (let i = 0; i < ejeX; i++) { 
-        
     casillaY = document.getElementById(ejeY+" "+i);
-    casillaY.style.position = "relative";
-    casillaY.style.boxShadow = "0 0 3px 5px #7AEEE3"
-    ;       
+    casillaY.classList.add("destacado");
     }
     //destacar la casilla seleccionada
     casilla = document.getElementById(ejeY+" "+ejeX);
-    casilla.style.position = "relative";
-    casilla.style.boxShadow = "0 0 3px 5px #7AEEE3"
-    ;
+    casilla.classList.add("destacado");
 }
 function resetearDestacado(ejeY, ejeX){
     //recorrer en la posicion X, tantas como Y se han especificado
     for (let i = 0; i < ejeY; i++) {
         casillaX = document.getElementById(i+" "+ejeX);
-        casillaX.style.position = "static";
-        casillaX.style.boxShadow = "none";   
+        casillaX.classList.remove("destacado");
     }
     //recorrer en la posicion Y, tantas como X se han especificado
     for (let i = 0; i < ejeX; i++) { 
-        
-    casillaY = document.getElementById(ejeY+" "+i);
-    casillaY.style.position = "static";
-    casillaY.style.boxShadow = "none";       
+        casillaY = document.getElementById(ejeY+" "+i);   
+        casillaY.classList.remove("destacado");
     }
     //destacar la casilla seleccionada
     casilla = document.getElementById(ejeY+" "+ejeX);
-    casilla.style.position = "static";
-    casilla.style.boxShadow = "none";
+    casilla.classList.remove("destacado");
 }

@@ -67,3 +67,9 @@ td{
 .atacante>p{
     transform: rotate(-90deg);
 }
+.destacado{
+    box-shadow: 0 0 3px 5px #7AEEE3;
+    -moz-box-shadow: 0 0 3px 5px #7AEEE3;
+    -webkit-box-shadow: 0 0 3px 5px #7AEEE3;
+    position: relative;
+}

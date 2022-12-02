@@ -45,6 +45,9 @@ class Pokemon{
             case "Dragon":color= "#6F35FC"; break;
             case "Ice":color= "#96D9D6"; break;
             case "Ghost":color= "#735797"; break;
+            case "Dark": color="#705746"; break;
+            case "Steel": color="#B7B7CE";break;
+            case "Fairy":color="#D685AD";break;
             default:
                 break;
         }
