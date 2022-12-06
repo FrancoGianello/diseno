@@ -1,5 +1,7 @@
 <?php
     require ("./Detalle.php");
+    // Report all errors except E_NOTICE   
+    error_reporting(E_ALL ^ E_NOTICE);  
     if(isset($_GET["id"])){
         $identificador = $_GET["id"];
         $coincidencia = false;
