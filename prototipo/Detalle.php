@@ -36,9 +36,6 @@
             return $id."";
             
         }
-        public function pintarDatos(){
-
-        }
         public function getId(){return $this->id;}
         public function getImgRef(){return $this->imgRef;}
         public function getName(){return $this->name;}

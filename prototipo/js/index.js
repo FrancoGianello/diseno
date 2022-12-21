@@ -6,12 +6,13 @@ try {
 http.open('get', './json/pokedexData.json', true);
 http.send();
 const FINALGEN1 =151;
+const FINALGEN2 =251;
 if (padre!=undefined && padre!=null){
     http.onload = function(){
         if(this.readyState == 4 && this.status==200){
             let datos = JSON.parse(this.responseText);
             for (let value of datos) {
-                if(value.id<=FINALGEN1){
+                if(value.id<=FINALGEN2){
                 pokemonDatos = new Pokemon(value.id, value.name.english, value.type);
                 padre.innerHTML += pokemonDatos.pintarObjeto();
                 }
