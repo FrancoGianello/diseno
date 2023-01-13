@@ -11,7 +11,7 @@ class Pokemon{
         return id;
     }
     pintarObjeto(){
-        return '<a class="enlace" id="'+this.id+'" href="pokemonInfo.php?id='+this.id+'"><div '+ this.obtenerColores()+' class="caja"><p class="numero">'+this.imgref+'</p><img class="fotos" src="./images/'+ this.imgref+'.png"/><p class="nombre"><b>'+this.name+'</b></p><p class="tipo">'+this.obtenerTextoTipos()+'</p></div></a>';
+        return '<a class="enlace" id="'+this.id+'" href="pokemonInfo.html?id='+this.id+'"><div '+ this.obtenerColores()+' class="caja"><p class="numero">'+this.imgref+'</p><img class="fotos" src="./images/'+ this.imgref+'.png"/><p class="nombre"><b>'+this.name+'</b></p><p class="tipo">'+this.obtenerTextoTipos()+'</p></div></a>';
     }
     obtenerTextoTipos(){
         let textoTipo = "";

@@ -1,25 +1,27 @@
-let http = new XMLHttpRequest();
 let padre="";
-try {
-    padre = document.getElementById("mainIndex");   
-}catch (error) {}  
-http.open('get', './json/pokedexData.json', true);
-http.send();
+padre = document.getElementById("mainIndex");
 const FINALGEN1 =151;
-if (padre!=undefined && padre!=null){
-    http.onload = function(){
-        if(this.readyState == 4 && this.status==200){
-            let datos = JSON.parse(this.responseText);
-            for (let value of datos) {
-                if(value.id<=FINALGEN1){
-                pokemonDatos = new Pokemon(value.id, value.name.english, value.type);
-                padre.innerHTML += pokemonDatos.pintarObjeto();
-                }
-                else break;
-            }
+const FINALGEN2 = 251;
+const FINALGEN3 = 386;
+const FINALGEN4 = 493;
+const FINALGEN5 = 649;
+const FINALGEN6 = 721;
+const FINALGEN7 = 809;
+
+
+fetch("../json/pokedexData.json")
+.then(function(reponse){
+    return reponse.json();
+})
+.then(function(reponse){
+    for (let value of reponse) {
+        if(value.id<=FINALGEN7 && value.id>FINALGEN6){
+        let pokemonDatos = new Pokemon(value.id, value.name.english, value.type);
+        padre.innerHTML += pokemonDatos.pintarObjeto();
         }
+        // else break;
     }
-}
+})
 function buscarDatos() {
     var input, filtro, dato;
     input = document.getElementById("barra-busqueda");

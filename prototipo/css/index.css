@@ -1,8 +1,4 @@
 @import url("./plantilla.css");
-
-a{
-    color: black;
-}
 .main{
     max-width: 1200px;
     margin: 0 auto;

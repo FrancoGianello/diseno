@@ -1,14 +1,9 @@
 @import url("./plantilla.css");
-body{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 10vh 80vh 10vh;
-}
 .main{
     width: 70vw;
     margin: auto;
     padding: 25px;
-    height: 80vh;
+    height: 84vh;
     display: grid;
     grid-template-rows: 1fr 1.5fr;
     gap: 10px;

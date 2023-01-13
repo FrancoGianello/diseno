@@ -1,18 +1,3 @@
-<?php
-    require ("./Detalle.php");
-    if(isset($_GET["id"])){
-        $identificador = $_GET["id"];
-        $coincidencia = false;
-        $detallePokemon = new Detalle($identificador);
-        if($detallePokemon->getId()=="") {
-            echo "ERROR 404 data not found";
-            die();
-        }else $detallePokemon->inicializarDatos();
-    }else {
-        echo "Esta página solo muestra la detalle";
-        die();
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +7,9 @@
     <link rel="stylesheet" href="./css/info.css">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <script src="./js/infoPokemon.js"></script>
+    <script src="./js/Pokemon.js"></script>
     <title>infoPokemon</title>
-    <script src="./js/index.js" defer></script>
 </head>
 <body>
     <header class="navegador">
@@ -33,26 +19,15 @@
     </header>
     <main class="main" id="main">
         <div id="imagen" class="imagen">
-            <img src="./images/<?php echo $detallePokemon->getImgRef(); ?>.png">
+            <img id="imgPokemon">
         </div>
-        <div id="descripcionPokedex" class="descripcionPokedex">
-            <?php  
-                
-                echo (count($detallePokemon->getType())==1)? "Tipo: " :  "Tipos: ";
-                array_walk($detallePokemon->getType(), function($key){
-                    echo $key." ";
-                });
-                echo "<br/>";
-                echo ($detallePokemon->getName());
-            ?>
+        <div id="descripcion" class="descripcion">
+            <h1 id="nombrePokemon">Pokemon: </h1>
+            <h3 id="idPokemon">id: </h3>
+            <h3 id="tipos">Tipos: </h3>
         </div>
-        <div id="descripcionJuego" class="descripcionJuego">
+        <div id="stats" class="stats">
             <h1 class="tituloStats">POKEMON STATS</h1>
-            <?php
-                array_walk($detallePokemon->getBase(), function($key, $value){
-                    echo $key.": ".$value." ";
-                });
-            ?>
         </div>
     </main>
     <footer class="piePagina">
